@@ -1,9 +1,6 @@
 # 🎓 StudyPal — AI Learning Buddy & Scholarship Platform
 
-> **Project Repository**: [https://github.com/SarthakH0607/studypal](https://github.com/SarthakH0607/studypal)
-
- 
- SITE IS LIVE AT (https://sarthakh0607.github.io/studypal/)
+> ** SITE IS LIVE AT:** (https://sarthakh0607.github.io/studypal/)
 
 StudyPal is an end-to-end, privacy-focused AI learning companion and educational equity platform designed for students, parents, and educators. It combines multimodal AI tutoring (voice, vision, text), gamified curriculum paths, adaptive exam generation, semantic document search (RAG), and a privacy-first Indian scholarship discovery and eligibility matching engine.
 
