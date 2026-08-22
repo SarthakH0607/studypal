@@ -31,16 +31,15 @@ class Settings(BaseSettings):
     gemini_model: str = "gemini-3.6-flash"
     gemini_image_model: str = "gemini-3.6-flash"
     whisper_model: str = "whisper-large-v3-turbo"
-    bge_m3_model: str = "BAAI/bge-m3"
 
     # --- RAG ---
     chunk_size: int = 500
     chunk_overlap: int = 50
-    vector_dimension: int = 1024
+    vector_dimension: int = 768
     similarity_top_k: int = 5
 
     model_config = {
-        "env_file": "backend/.env",
+        "env_file": ".env",
         "env_file_encoding": "utf-8",
         "extra": "ignore",
     }

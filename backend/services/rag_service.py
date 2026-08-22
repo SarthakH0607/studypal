@@ -8,7 +8,7 @@ from PyPDF2 import PdfReader
 from io import BytesIO
 
 from backend.config import Settings
-from backend.services.bge_m3_service import Bge_M3_Service
+from backend.services.gemini_embedding_service import GeminiEmbeddingService
 from backend.services.gemini_service import GeminiService
 from backend.services.supabase_service import SupabaseService
 
@@ -19,12 +19,12 @@ class RAGService:
     def __init__(
         self,
         settings: Settings,
-        bge_m3: Bge_M3_Service,
+        embedding_service: GeminiEmbeddingService,
         gemini: GeminiService,
         supabase: SupabaseService,
     ):
         self._settings = settings
-        self._bge_m3 = bge_m3
+        self._embedding = embedding_service
         self._gemini = gemini
         self._supabase = supabase
         self._chunk_size = settings.chunk_size
@@ -70,7 +70,7 @@ class RAGService:
             chunks = self._chunk_text(text)
 
             # 4. Generate embeddings for all chunks
-            embeddings = self._bge_m3.encode(chunks)
+            embeddings = self._embedding.encode(chunks)
 
             # 5. Store chunks with embeddings in Supabase
             chunk_records = []
@@ -116,7 +116,7 @@ class RAGService:
         """
         try:
             # 1. Embed the query
-            query_embedding = self._bge_m3.encode_query(question)
+            query_embedding = self._embedding.encode_query(question)
 
             if not query_embedding:
                 return {"answer": "Failed to process your question.", "sources": []}

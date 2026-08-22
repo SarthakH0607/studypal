@@ -15,14 +15,14 @@ from backend.routes import auth, learning, tutor, documents, exams, dashboard, t
 # ---------------------------------------------------------------------------
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Startup: load heavy models (BGE-M3). Shutdown: cleanup."""
+    """Startup: initialize services. Shutdown: cleanup."""
     settings = get_settings()
     print(f"Starting {settings.app_name} backend ...")
 
-    # Lazy-import so the model is only loaded once at startup
-    from backend.services.bge_m3_service import Bge_M3_Service
-    app.state.bge_m3 = Bge_M3_Service(settings)
-    print("BGE-M3 service initialized")
+    # Initialize Gemini Embedding Service (API-based, no heavy model loading)
+    from backend.services.gemini_embedding_service import GeminiEmbeddingService
+    app.state.embedding_service = GeminiEmbeddingService(settings)
+    print("Gemini Embedding service initialized")
 
     yield  # ---- app is running ----
 

@@ -26,10 +26,10 @@ class QueryRequest(BaseModel):
 # ---------------------------------------------------------------------------
 def _get_rag(request: Request) -> RAGService:
     settings = get_settings()
-    bge_m3 = request.app.state.bge_m3
+    embedding_service = request.app.state.embedding_service
     return RAGService(
         settings=settings,
-        bge_m3=bge_m3,
+        embedding_service=embedding_service,
         gemini=GeminiService(settings),
         supabase=SupabaseService(settings),
     )
