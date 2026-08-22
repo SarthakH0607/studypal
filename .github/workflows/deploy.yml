@@ -39,7 +39,7 @@ jobs:
           NODE_ENV: production
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || 'https://fckdeqnfrulndmqlhcug.supabase.co' }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZja2RlcW5mcnVsbmRtcWxoY3VnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcyMzI0MDUsImV4cCI6MjEwMjgwODQwNX0.m4pYNyJy6eXPsXJMl0LF38rHfqP-tkZZpDSCxu7b3yg' }}
-          VITE_API_URL: ${{ secrets.VITE_API_URL || 'https://studypal-api.onrender.com' }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL || 'https://studypal-backend-k6r4.onrender.com' }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
