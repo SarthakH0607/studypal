@@ -1,0 +1,69 @@
+.chat-input-form {
+  width: 100%;
+}
+
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: #FFFFFF;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full); /* Signature Pill Shape */
+  padding: 8px 10px 8px 22px;
+  box-shadow: 0 4px 16px rgba(47, 95, 217, 0.06);
+  transition: all var(--transition-fast);
+}
+
+.chat-input-container:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px var(--color-primary-light), 0 6px 20px rgba(47, 95, 217, 0.12);
+}
+
+.chat-input {
+  flex: 1;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  line-height: 1.5;
+  resize: none;
+  padding: 6px 0;
+  max-height: 120px;
+  box-shadow: none !important;
+}
+
+.chat-input::placeholder {
+  color: var(--color-text-tertiary);
+  font-family: var(--font-body);
+}
+
+.chat-send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-pill);
+  flex-shrink: 0;
+}
+
+.chat-send-btn:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  transform: scale(1.06);
+}
+
+.chat-send-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

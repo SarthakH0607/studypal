@@ -1,0 +1,445 @@
+/* ==========================================================================
+   StudyPal Design System — Playful, Colorful, Gamified "Learning Buddy"
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@500;600;700;800;900&display=swap');
+
+/* --------------------------------------------------------------------------
+   CSS Custom Properties (StudyPal Tokens)
+   -------------------------------------------------------------------------- */
+:root {
+  /* --- Primary & Accents --- */
+  --color-primary: #2F5FD9;             /* Primary Blue */
+  --color-primary-hover: #244ec2;
+  --color-primary-light: #EEF3FF;
+  --color-primary-glow: rgba(47, 95, 217, 0.25);
+
+  --color-purple: #7C3AED;              /* Purple Accent */
+  --color-purple-light: #F3EEFF;
+  --color-purple-hover: #6D28D9;
+
+  --color-gold: #F5A623;                /* Gold / Amber Accent */
+  --color-gold-light: #FFF6E5;
+  --color-gold-hover: #E09212;
+
+  --color-success: #22C55E;             /* Success Green */
+  --color-success-light: #EBFBF1;
+  --color-success-hover: #16A34A;
+
+  --color-error: #EF4444;               /* Error Red */
+  --color-error-light: #FEE2E2;
+
+  --color-warning: #F59E0B;
+  --color-warning-light: #FEF3C7;
+
+  /* --- Backgrounds & Surfaces --- */
+  --color-bg: #F3F6FC;                  /* Very light blue-grey */
+  --color-surface: #FFFFFF;             /* Pure White Card */
+  --color-surface-hover: #FAFBFF;
+  --color-surface-subtle: #F8FAFD;
+
+  /* --- Typography Colors --- */
+  --color-text: #1E2433;                /* Dark Slate */
+  --color-text-secondary: #5B6478;      /* Slate Secondary */
+  --color-text-tertiary: #8F9BB3;       /* Light Muted */
+  --color-text-inverse: #FFFFFF;
+
+  /* --- Borders & Outlines --- */
+  --color-border: #E2E8F4;
+  --color-border-subtle: #EDF2FA;
+  --color-border-focus: #2F5FD9;
+
+  /* --- Gradients --- */
+  --gradient-hero: linear-gradient(135deg, #2F5FD9 0%, #7C3AED 100%);
+  --gradient-gold: linear-gradient(135deg, #F5A623 0%, #FFC15E 100%);
+  --gradient-purple: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+  --gradient-blue: linear-gradient(135deg, #2F5FD9 0%, #3B82F6 100%);
+  --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #F9FAFE 100%);
+  --gradient-ai: linear-gradient(135deg, #FFFFFF 0%, #F1F5FD 100%);
+
+  /* --- Typography --- */
+  --font-heading: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-md: 1.125rem;   /* 18px */
+  --font-size-lg: 1.25rem;    /* 20px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 1.75rem;   /* 28px */
+  --font-size-3xl: 2.25rem;   /* 36px */
+  --font-size-4xl: 2.75rem;   /* 44px */
+
+  /* --- Spacing --- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+
+  /* --- Shapes & Radii (Pill-first signature look) --- */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;          /* Cards & large containers */
+  --radius-2xl: 24px;
+  --radius-full: 9999px;      /* Signature Pill Buttons & Badges */
+
+  /* --- Elevation / Soft Shadows --- */
+  --shadow-sm: 0 2px 8px rgba(47, 95, 217, 0.04), 0 1px 3px rgba(30, 36, 51, 0.03);
+  --shadow-md: 0 8px 20px rgba(47, 95, 217, 0.06), 0 2px 6px rgba(30, 36, 51, 0.03);
+  --shadow-lg: 0 14px 32px rgba(47, 95, 217, 0.08), 0 4px 12px rgba(30, 36, 51, 0.04);
+  --shadow-xl: 0 24px 48px rgba(47, 95, 217, 0.12), 0 8px 20px rgba(30, 36, 51, 0.05);
+  --shadow-pill: 0 4px 14px rgba(47, 95, 217, 0.25);
+  --shadow-gold: 0 4px 14px rgba(245, 166, 35, 0.28);
+  --shadow-purple: 0 4px 14px rgba(124, 58, 237, 0.25);
+
+  /* --- Layout --- */
+  --sidebar-width: 240px;
+  --sidebar-collapsed: 76px;
+  --header-height: 72px;
+  --content-max-width: 1280px;
+
+  /* --- Transitions --- */
+  --transition-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 260ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Base Styles
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: var(--font-size-3xl); }
+h2 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-xl); }
+h4 { font-size: var(--font-size-lg); }
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   Scrollbar
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* --------------------------------------------------------------------------
+   Forms & Inputs (Pill & Rounded styles)
+   -------------------------------------------------------------------------- */
+.input {
+  width: 100%;
+  padding: 12px 18px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full); /* Signature Pill Input */
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+  outline: none;
+  box-shadow: 0 2px 6px rgba(47, 95, 217, 0.02);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px var(--color-primary-light);
+}
+
+.input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-family: var(--font-body);
+  resize: vertical;
+  min-height: 90px;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px var(--color-primary-light);
+}
+
+.label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Gamification Helpers (XP, Streaks, Levels)
+   -------------------------------------------------------------------------- */
+.xp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--color-gold-light);
+  border: 1.5px solid #FDE68A;
+  border-radius: var(--radius-full);
+  color: #B45309;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.streak-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #FFF1F2;
+  border: 1.5px solid #FECDD3;
+  border-radius: var(--radius-full);
+  color: #E11D48;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.level-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--color-purple-light);
+  border: 1.5px solid #E9D5FF;
+  border-radius: var(--radius-full);
+  color: var(--color-purple);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Progress Bars (Horizontal Pill & Circular Rings)
+   -------------------------------------------------------------------------- */
+.progress-bar-pill {
+  width: 100%;
+  height: 10px;
+  background: #E2E8F4;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill-blue {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base) ease-out;
+}
+
+.progress-fill-gold {
+  height: 100%;
+  background: var(--color-gold);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base) ease-out;
+}
+
+.progress-fill-purple {
+  height: 100%;
+  background: var(--color-purple);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base) ease-out;
+}
+
+/* --------------------------------------------------------------------------
+   Animations
+   -------------------------------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.92); opacity: 0; }
+  70% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-fade-in { animation: fadeIn var(--transition-base) ease-out; }
+.animate-fade-in-up { animation: fadeInUp var(--transition-slow) ease-out; }
+.animate-bounce { animation: bounceIn var(--transition-bounce) ease-out; }
+.animate-spin { animation: spin 1s linear infinite; }
+.animate-pulse-glow { animation: pulseGlow 2.5s ease-in-out infinite; }
+
+.delay-1 { animation-delay: 40ms; }
+.delay-2 { animation-delay: 80ms; }
+.delay-3 { animation-delay: 120ms; }
+.delay-4 { animation-delay: 160ms; }
+.delay-5 { animation-delay: 200ms; }
+
+/* --------------------------------------------------------------------------
+   Markdown Content
+   -------------------------------------------------------------------------- */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.markdown-content p {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+.markdown-content ul, .markdown-content ol {
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-6);
+  color: var(--color-text-secondary);
+}
+
+.markdown-content li {
+  margin-bottom: var(--space-1);
+}
+
+.markdown-content code {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88em;
+  font-weight: 600;
+}
+
+.markdown-content pre {
+  background: #1E2433;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  overflow-x: auto;
+  margin-bottom: var(--space-4);
+}
+
+.markdown-content pre code {
+  background: none;
+  color: #F8FAFC;
+  padding: 0;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-4);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.page-enter {
+  animation: fadeInUp 250ms ease-out;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 0px;
+    --header-height: 64px;
+    --space-16: 2rem;
+  }
+}

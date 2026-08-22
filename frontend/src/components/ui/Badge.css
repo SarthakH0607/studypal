@@ -1,0 +1,69 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  border-radius: var(--radius-full); /* Signature Pill Badges */
+  white-space: nowrap;
+}
+
+.badge-sm {
+  padding: 3px 10px;
+  font-size: var(--font-size-xs);
+  line-height: 16px;
+}
+
+.badge-md {
+  padding: 5px 14px;
+  font-size: var(--font-size-sm);
+  line-height: 18px;
+}
+
+/* Primary: Blue Pill */
+.badge-default {
+  background: #EDF2F7;
+  color: var(--color-text-secondary);
+}
+
+.badge-primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border: 1px solid rgba(47, 95, 217, 0.2);
+}
+
+/* Gold / Amber Pill */
+.badge-gold,
+.badge-warning {
+  background: var(--color-gold-light);
+  color: #B45309;
+  border: 1px solid rgba(245, 166, 35, 0.3);
+}
+
+/* Purple Pill */
+.badge-purple,
+.badge-secondary {
+  background: var(--color-purple-light);
+  color: var(--color-purple);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+}
+
+/* Green Pill */
+.badge-success {
+  background: var(--color-success-light);
+  color: var(--color-success);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+/* Red Pill */
+.badge-error {
+  background: var(--color-error-light);
+  color: var(--color-error);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.badge-info {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border: 1px solid rgba(47, 95, 217, 0.2);
+}
